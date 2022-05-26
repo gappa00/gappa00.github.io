@@ -1,16 +1,16 @@
 <template>
   <div class="todo-app">
-    <p>
-        Моё ФИО <input v-model="name">
-        и мне <input v-model="age"> лет.
-    </p>
+    <div class="chelik-input">
+        ФИО челика: <input v-model="name">
+        Возраст челика: <input v-model="age">
+    </div>
     <button v-on:click="addNew">Добавить</button>
     <button v-on:click="clearInput">Очисить ввод</button>
-    <div v-if="showFromLocal">
+    <div v-if="showFromLocal" class="chelik-table">
 
         <table class="chelik-info">
             <tr class="chelik-info-tr-main">
-                <td colspan="4">Запомнено</td>
+                <td colspan="6">Запомнено</td>
             </tr>
             <tr class="chelik-info-tr">
                 <td>Номер:</td>
@@ -29,8 +29,30 @@
                 <td><button v-on:click="deleteChelik(index)">X</button></td>
             </tr>
         </table>
-        <button v-on:click="clear">Очистить</button>
+
+        <!-- <div class="chelik-info">
+            <div class="chelik-info-tr-main">
+                Запомнено
+            </div>
+            <div class="chelik-info-line">
+                <div>Номер:</div>
+                <div>Фамилия:</div>
+                <div>Имя:</div>
+                <div>Отчество:</div>
+                <div>Возраст:</div>
+                <div></div>
+            </div>
+            <div v-for="(chelik,index) in peoples" :key="chelik.nameFirst" class="chelik-info-line">
+                <div>{{ index + 1 }}</div>
+                <div><span v-if="chelik.nameFirst">{{ chelik.nameFirst }}</span></div>
+                <div><span v-if="chelik.nameSecond">{{ chelik.nameSecond }}</span></div>
+                <div><span v-if="chelik.nameLast">{{ chelik.nameLast }}</span></div>
+                <div><span v-if="chelik.savedAge">{{ chelik.savedAge }}</span></div>
+                <div><button v-on:click="deleteChelik(index)">X</button></div>
+            </div>
+        </div> -->
     </div>
+    <button v-on:click="clear">Очистить</button>
   </div>
 </template>
 

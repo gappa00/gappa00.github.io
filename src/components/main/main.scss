@@ -11,6 +11,23 @@ body {
   padding: 10px;
 }
 
+.chelik-input {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  max-width: 380px;
+  margin: 0 auto 16px;
+
+  input {
+    width: -webkit-fill-available;
+  }
+}
+
+.chelik-table {
+  overflow: auto;
+}
+
 table.chelik-info {
   width: 100%;
   background-color: aliceblue;
@@ -19,6 +36,8 @@ table.chelik-info {
   margin: 20px 0;
 }
 
-.chelik-info-tr>td {
-  border: gray 1px solid;
+.chelik-info-tr {
+  td {
+    border: gray 1px solid;
+  }
 }
