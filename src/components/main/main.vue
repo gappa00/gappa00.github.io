@@ -14,8 +14,8 @@
             </tr>
             <tr class="chelik-info-tr">
                 <td>Номер:</td>
+                <td>Фамилия:</td>
                 <td>Имя:</td>
-                <td>Возраст:</td>
                 <td>Отчество:</td>
                 <td>Возраст:</td>
                 <td ></td>

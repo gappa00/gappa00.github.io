@@ -34,9 +34,9 @@ module.exports = {
         }),
         new VueLoaderPlugin()
     ],
-    output: {
-        path: __dirname + '/docs', // Folder to store generated bundle
-        filename: 'bundle.js',  // Name of generated bundle after build
-        publicPath: '/' // public URL of the output directory when referenced in a browser
-    },
+    // output: {
+        // path: __dirname + '/docs', // Folder to store generated bundle
+        // filename: 'bundle.js',  // Name of generated bundle after build
+        // publicPath: '/' // public URL of the output directory when referenced in a browser
+    // },
 }
