@@ -52,9 +52,6 @@
             }
         },
         watch: {
-            // name(newName) {
-            //     localStorage.name = newName;
-            // }
         },
         mounted: function () {
             if (localStorage.age) {
