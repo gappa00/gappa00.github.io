@@ -1,14 +1,18 @@
 <template>
   <div class="todo-app">
     <div class="chelik-input">
-        ФИО челика: <input v-model="name">
-        Возраст челика: <input v-model="age">
+        <div>
+            ФИО челика: <input v-model="name">
+        </div>
+        <div>
+            Возраст челика: <input v-model="age">
+        </div>
     </div>
     <button v-on:click="addNew">Добавить</button>
     <button v-on:click="clearInput">Очисить ввод</button>
     <div v-if="showFromLocal" class="chelik-table">
 
-        <table class="chelik-info">
+        <!-- <table class="chelik-info">
             <tr class="chelik-info-tr-main">
                 <td colspan="6">Запомнено</td>
             </tr>
@@ -20,15 +24,41 @@
                 <td>Возраст:</td>
                 <td ></td>
             </tr>
-            <tr v-for="(chelik,index) in peoples" :key="chelik.nameFirst" class="chelik-info-tr">
-                <td>{{ index + 1 }}</td>
-                <td><span v-if="chelik.nameFirst">{{ chelik.nameFirst }}</span></td>
-                <td><span v-if="chelik.nameSecond">{{ chelik.nameSecond }}</span></td>
-                <td><span v-if="chelik.nameLast">{{ chelik.nameLast }}</span></td>
-                <td><span v-if="chelik.savedAge">{{ chelik.savedAge }}</span></td>
-                <td><button v-on:click="deleteChelik(index)">X</button></td>
-            </tr>
-        </table>
+            <draggable v-model="peoples" group="people" @start="drag=true" @end="drag=false">
+                <tr v-for="(chelik,index) in peoples" :key="chelik.nameFirst" class="chelik-info-tr">
+                    <td>{{ index + 1 }}</td>
+                    <td><span v-if="chelik.nameFirst">{{ chelik.nameFirst }}</span></td>
+                    <td><span v-if="chelik.nameSecond">{{ chelik.nameSecond }}</span></td>
+                    <td><span v-if="chelik.nameLast">{{ chelik.nameLast }}</span></td>
+                    <td><span v-if="chelik.savedAge">{{ chelik.savedAge }}</span></td>
+                    <td><button v-on:click="deleteChelik(index)">X</button></td>
+                </tr>
+            </draggable>
+        </table> -->
+
+        <div class="chelik-info">
+            <div class="chelik-info-tr-main">
+                <div colspan="6">Запомнено</div>
+            </div>
+            <div class="chelik-info-tr">
+                <div>Номер:</div>
+                <div>Фамилия:</div>
+                <div>Имя:</div>
+                <div>Отчество:</div>
+                <div>Возраст:</div>
+                <div></div>
+            </div>
+            <draggable v-model="peoples" group="people" @start="drag=true" @end="drag=false">
+                <div v-for="(chelik,index) in peoples" :key="chelik.nameFirst" class="chelik-info-tr">
+                    <div>{{ index + 1 }}</div>
+                    <div><span v-if="chelik.nameFirst">{{ chelik.nameFirst }}</span></div>
+                    <div><span v-if="chelik.nameSecond">{{ chelik.nameSecond }}</span></div>
+                    <div><span v-if="chelik.nameLast">{{ chelik.nameLast }}</span></div>
+                    <div><span v-if="chelik.savedAge">{{ chelik.savedAge }}</span></div>
+                    <div><button v-on:click="deleteChelik(index)">X</button></div>
+                </div>
+            </draggable>
+        </div>
 
         <!-- <div class="chelik-info">
             <div class="chelik-info-tr-main">
@@ -51,8 +81,8 @@
                 <div><button v-on:click="deleteChelik(index)">X</button></div>
             </div>
         </div> -->
+        <button v-on:click="clear">Очистить</button>
     </div>
-    <button v-on:click="clear">Очистить</button>
   </div>
 </template>
 
@@ -61,6 +91,7 @@
 <script>
     import TodoList from '../todo-list/list.vue'
     import TodoInput from '../todo-input/input.vue'
+    import draggable from 'vuedraggable'
 
     export default {
         name: 'App',
@@ -85,6 +116,7 @@
             }
         },
         components: {
+            draggable,
         },
         methods: {
             addNew() {

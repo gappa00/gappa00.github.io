@@ -12,12 +12,14 @@ body {
 }
 
 .chelik-input {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  max-width: 380px;
-  margin: 0 auto 16px;
+  div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 380px;
+    margin: 0 auto 16px;
+  }
 
   input {
     width: -webkit-fill-available;
@@ -28,8 +30,8 @@ body {
   overflow: auto;
 }
 
-table.chelik-info {
-  width: 100%;
+.chelik-info {
+  width: 99%;
   background-color: aliceblue;
   border: gray 1px solid;
   border-collapse: collapse;
@@ -37,7 +39,13 @@ table.chelik-info {
 }
 
 .chelik-info-tr {
-  td {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+
+  div {
     border: gray 1px solid;
+    width: -webkit-fill-available;
   }
 }
