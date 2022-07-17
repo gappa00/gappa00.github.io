@@ -1,14 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: aliceblue;
+}
+
 .todo-app {
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   background: #d7e5ff;
   border-radius: 8px;
-  padding: 10px;
+  padding: 30px;
+  border: 1px solid #a0a0a0;
 }
 
 .chelik-input {
@@ -26,26 +37,89 @@ body {
   }
 }
 
-.chelik-table {
-  overflow: auto;
+.moving-item {
+  opacity: 0.5;
+  background: #000;
+  border: 1px solid #4299e1;
 }
 
 .chelik-info {
-  width: 99%;
-  background-color: aliceblue;
-  border: gray 1px solid;
-  border-collapse: collapse;
-  margin: 20px 0;
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    background: aliceblue;
+    border: 1px solid #a0a0a0;
+    border-radius: 10px;
+    margin: 32px 10px;
+  }
+
+  &__title {
+    width: 100%;
+    border-bottom: 1px solid #a0a0a0;
+    height: 32px;
+    line-height: 30px;
+  }
+
+  &__properties-list {
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__properties-index {
+    width: 20%;
+    border-right: 1px solid #a0a0a0;
+  }
+
+  &__properties-name {
+    width: 45%;
+    border-right: 1px solid #a0a0a0;
+  }
+
+  &__properties-age {
+    width: 24%;
+    border-right: 1px solid #a0a0a0;
+  }
+
+  &__properties-blank {
+    width: 11%;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: flex-start;
+    border-top: 1px solid #a0a0a0;
+    height: 32px;
+  }
+
+  &__item-index {
+    width: 20%;
+    border-right: 1px solid #a0a0a0;
+  }
+
+  &__item-name {
+    width: 45%;
+    border-right: 1px solid #a0a0a0;
+  }
+
+  &__item-age {
+    width: 24%;
+    border-right: 1px solid #a0a0a0;
+  }
+
+  &__item-del {
+    width: 11%;
+  }
 }
 
-.chelik-info-tr {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: stretch;
-
-  div {
-    border: gray 1px solid;
-    width: -webkit-fill-available;
-  }
+button {
+  margin: 0px auto;
 }
