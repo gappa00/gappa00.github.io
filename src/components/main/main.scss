@@ -18,7 +18,7 @@ body {
   text-align: center;
   background: #d7e5ff;
   border-radius: 8px;
-  padding: 30px;
+  padding: 10px;
   border: 1px solid #a0a0a0;
 }
 
@@ -50,7 +50,7 @@ body {
     background: aliceblue;
     border: 1px solid #a0a0a0;
     border-radius: 10px;
-    margin: 32px 10px;
+    margin: 32px 0;
   }
 
   &__title {
@@ -97,7 +97,7 @@ body {
     display: flex;
     justify-content: flex-start;
     border-top: 1px solid #a0a0a0;
-    height: 32px;
+    min-height: 32px;
   }
 
   &__item-index {
@@ -117,6 +117,14 @@ body {
 
   &__item-del {
     width: 11%;
+  }
+
+  &__item-index, 
+  &__item-age,
+  &__item-del {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 

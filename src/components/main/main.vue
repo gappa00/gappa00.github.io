@@ -4,11 +4,11 @@
       <div class="todo-app">
 
         <div class="chelik-input">
-            <div>
-                Имя челика: <input v-model="nameFirst">
-            </div>
            <div>
                 Фамилия челика: <input v-model="nameSecond">
+            </div>
+            <div>
+                Имя челика: <input v-model="nameFirst">
             </div>
             <div>
                 Отчество челика: <input v-model="nameLast">
@@ -35,8 +35,8 @@
                     <div v-for="(chelik,index) in peoples" :key="chelik.nameFirst" class="chelik-info__item">
                         <div class="chelik-info__item-index">{{ index + 1 }}</div>
                         <div class="chelik-info__item-name">
-                            <span v-if="chelik.nameFirst">{{ chelik.nameFirst }}</span>
                             <span v-if="chelik.nameSecond"> {{ chelik.nameSecond }}</span>
+                            <span v-if="chelik.nameFirst">{{ chelik.nameFirst }}</span>
                             <span v-if="chelik.nameLast"> {{ chelik.nameLast }}</span>
                         </div>
                         <div class="chelik-info__item-age"><span v-if="chelik.savedAge">{{ chelik.savedAge }}</span></div>
