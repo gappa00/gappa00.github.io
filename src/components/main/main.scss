@@ -98,6 +98,13 @@ body {
     justify-content: flex-start;
     border-top: 1px solid #a0a0a0;
     min-height: 32px;
+    opacity: 0;
+    animation: ani 0.3s forwards;
+    
+    @keyframes ani {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
   }
 
   &__item-index {

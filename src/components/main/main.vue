@@ -20,6 +20,7 @@
 
         <button v-on:click="addNew">Добавить</button>
         <button v-on:click="clearInput">Очисить ввод</button>
+        <button v-on:click="showJson">Загрузить даныне из JSON примера</button>
 
         <div v-if="showFromLocal" class="chelik-table">
             <div class="chelik-info__wrap">
@@ -55,6 +56,7 @@
 <style lang="scss" src="./main.scss"></style>
 
 <script>
+    import json from './peoples.json'
     import draggable from 'vuedraggable'
 
     export default {
@@ -80,11 +82,17 @@
                 this.peoples = JSON.parse(localStorage.peoplesLocal);
                 this.showFromLocal = true;
             }
+            console.log(localStorage.peoplesLocal);
         },
         components: {
             draggable,
         },
         methods: {
+            showJson() {      
+	            this.peoples = json;
+                this.showFromLocal = true;
+                localStorage.peoplesLocal = JSON.stringify(this.peoples);
+            },
             addNew() {
                 this.peoples.push({
                     nameFirst: this.nameFirst,

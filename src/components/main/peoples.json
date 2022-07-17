@@ -1,0 +1,33 @@
+[
+    {
+        "nameFirst": "Сергей",
+        "nameSecond": "Гаппель",
+        "nameLast": "Константинович",
+        "savedAge": "25"
+    }, {
+        "nameFirst": "Гангрен",
+        "nameSecond": "Иванов",
+        "nameLast": "Алексеевич",
+        "savedAge": "42"
+    }, {
+        "nameFirst": "Андрей",
+        "nameSecond": "Кольцев",
+        "nameLast": "Абдуросикович",
+        "savedAge": "35"
+    }, {
+        "nameFirst": "Бока",
+        "nameSecond": " Аардов",
+        "nameLast": " Жокавич",
+        "savedAge": "56"
+    }, {
+        "nameFirst": "Анастасия",
+        "nameSecond": "Пориджева",
+        "nameLast": "Алексеева",
+        "savedAge": "21"
+    }, {
+        "nameFirst": "Рубен",
+        "nameSecond": "Твентиванов",
+        "nameLast": "Рикролович",
+        "savedAge": "21"
+    }
+]
